@@ -6,6 +6,9 @@ public class StepTracker {
 
     public StepTracker(int activityThreshold) {
         minSteps = activityThreshold;
+        totalDays = 0;
+        activeDays = 0;
+        totalSteps = 0;
     }
 
     void addDailySteps(int stepCount) {
@@ -17,6 +20,7 @@ public class StepTracker {
         return activeDays;
     }
     double averageSteps() {
+        if (totalSteps == 0) return 0;
         return (double) totalSteps / totalDays;
     }
 }
